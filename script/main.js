@@ -1,135 +1,59 @@
-var task = +prompt("Введите номер задания");
-if (task == 1) {
-  var a = 1, b = 1, c, d;
-  c = ++a; console.log(c);           // 2  Префиксная форма, сначала увеличивает значение, а потом возвращает результат
-  d = b++; console.log(d);           // 1  Постфиксная форма увеличивает значение, но возвращает старое значение
-  c = (2 + ++a); console.log(c);      // 5  Сначала увеличили, потом сложили
-  d = (2 + b++); console.log(d);      // 4  увеличили b до 3 но при сложении использовали старое значение 2 (стр 3).
-  console.log(a);                    // 3  увеличили переменную на 1 2 раза (стр 2 и 4)
-  console.log(b);                    // 3  увеличили переменную на 1 2 раза (стр 3 и 5)
+// //1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+// var a = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
+// var b = 0;
+// while (b < a.length) {
+//     console.log(a[b++]);
+// }
+// let num = 0;
+// while(num <= 100) {
+//     if (isSimple(num))
+//         console.log(num++);
+// }
+
+function isSimple(number) {
+    let counter = 0;
+    for (let i = 0; i <= number; i++) {
+        if (number % i == 0)
+            counter++;
+    }
+    return counter == 2;
 }
-else if (task == 2) {
-  var y = 2;
-  var x = 1 + (y *= 2); // 2*2+1
-  console.log(x);
+
+let num = -1;
+while (num < 100) {
+    // console.log('num', num++));
+    if (isSimple(num)) {
+        console.log(num);
+    }
+    num++;
 }
 
-else if (task == 3) {
-  var param1 = +prompt("Ведите первое чило");
-  var param2 = +prompt("Ведите второе число");
-  if (isNaN(param1) || isNaN(param2)) {
-    console.log("Error, numbers only!");
-  } else if (param1 >= 0 && param2 >= 0) {
-    console.log(param1 - param2);
-  } else if (param1 < 0 && param2 < 0) {
-    console.log(a * b);
-  } else {
-    console.log(param1 + param2);
-  }
-} else if (task == 4) {
-  let a = +prompt("Введите число от 0 до 15");
-  if (a >= 0 && a <= 15) {
-    switch (a) {
-      case 0:
-        console.log(0);
-      case 1:
-        console.log(1);
-      case 2:
-        console.log(2);
-      case 3:
-        console.log(3);
-      case 4:
-        console.log(4);
-      case 5:
-        console.log(5);
-      case 6:
-        console.log(6);
-      case 7:
-        console.log(7);
-      case 8:
-        console.log(8);
-      case 9:
-        console.log(9);
-      case 10:
-        console.log(10);
-      case 11:
-        console.log(11);
-      case 12:
-        console.log(12);
-      case 13:
-        console.log(13);
-      case 14:
-        console.log(14);
-      case 15:
-        console.log(15);
-      default:
-        break;
+// Предположим, есть сущность корзины. 
+// Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров. 
+// Товары в корзине хранятся в массиве. Задачи:
+//  - Организовать такой массив для хранения товаров в корзине;
+//  - Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+
+var product = ['Карандаш', 'Ручка', 'Тетрадь'];
+var cost = [50, 100, 75];
+
+console.log('Товары: ' + product);
+console.log('Cтоимостm товаров: ' + cost);
+
+function countBasketPrice(array) {
+    var sum = 0;
+    for (var i = 0; i < array.length; i++) {
+        sum += array[i];
     }
-  }
-} else if (task == 5) {
-  function sum(a, b) {
-    // "+"
-    return a + b;
-  }
-  function sub(a, b) {
-    // "-"
-    return a - b;
-  }
-  function mul(a, b) {
-    // "*"
-    return a * b;
-  }
-  function div(a, b) {
-    // "/"
-    return a / b;
-  }
+    console.log('Общая стоимость товаров: ' + sum);
+}
+countBasketPrice(cost);
 
-  let num1 = +prompt("Введите первое число");
-  let sign = prompt("Введите знак операции");
-  let num2 = +prompt("Введите второе число");
+// 4.Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла.
+for (var number = 0; number <= 9; console.log(number++)) { }
 
-  if (isNaN(num1) || isNaN(num2)) {
-    console.log("Error, numbers only!");
-  } else {
-    switch (sign) {
-      case "+":
-        console.log(sum(num1, num2));
-        break;
-      case "-":
-        console.log(sub(num1, num2));
-        break;
-      case "*":
-        console.log(mul(num1, num2));
-        break;
-      case "/":
-        console.log(div(num1, num2));
-        break;
-      default:
-        console.log("Такой математической операции не существует");
-        break;
-    }
-  }
-} else if (task == 6) {
-  function mathOperation(arg1, arg2, operation) {
-    switch (operation) {
-      case '+':
-        console.log('Результат сложения = ' + (arg1 + arg2));
-        break;
-      case '-':
-        console.log('Результат вычитания = ' + (arg1 - arg2));
-        break;
-      case '*':
-        console.log('Результат умножения = ' + (arg1 * arg2));
-        break;
-      case '/':
-        console.log('Результат деления = ' + (arg1 / arg2));
-        break;
-    }
-  }
-
-  var operation = prompt("Введите знак операции");
-  var num1 = +prompt("Введите первое число");
-  var num2 = +prompt("Введите второе число");
-
-  mathOperation(num1, num2, operation);
+// 5.Нарисовать пирамиду с 20 рядами с помощью console.log, как показано на рисунке:
+for (var i = 1, z = ''; i <= 20; i++) {
+    z += "x";
+    console.log(z);
 }
