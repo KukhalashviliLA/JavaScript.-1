@@ -1,0 +1,40 @@
+.chessDesk {
+    display: grid;
+    grid-template-columns: 30px repeat(8, 100px);
+    grid-template-rows: 30px repeat(8, 100px);
+    background-color: wheat;
+    justify-content: center;
+}
+
+.item {
+    background-color: white;
+}
+
+.black {
+    background-color: black;
+    opacity: 30%;
+}
+
+.number {
+    align-self: center;
+}
+
+.letter {
+    text-align: center;
+}
+
+#tagHello {
+    display: inline-block;
+    padding-left: 5%;
+}
+
+#result {
+    width: 250px;
+}
+/* .task_2 {
+    padding-left: 5%;
+} */
+
+button {
+    width: 150px;
+}

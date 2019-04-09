@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lesson_5</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Урок 5. Введение в DOM</h3>
+            <h5>Задание 1</h5>
+            <p>
+                Есть кнопка button рядом с ней есть текст (Hello)
+                необходимо при нажатии на кнопку поменять текст кнопки на (Привет)
+            </p>
+            <button id="hello" class="btn btn-primary" onclick="butt()">Hello!</button>
+            <hr>
+            <h5>Задание 2</h5>
+            <p>
+                Есть кнопка button рядом с ней есть тэг &lt;b&gt;&lt;/b&gt; (Hello) необходимо при нажатии на кнопку
+                поменять тэг на &lt;h3&gt;&lt;/h3>
+            </p>
+            <button class="btn btn-primary" onclick="task2()">кнопка</button>
+            <b id="tagHello" class="task_2">Hello!</b>
+            <hr>
+            <h5>Задание 3</h5>
+            <p>Дан код
+                &lt;h2>Заголовок.&lt;/h2>
+                &lt;ul>
+                &lt;li>list&lt;/li>
+                &lt;li>list&lt;/li>
+                &lt;li>list&lt;/li>
+                &lt;li>list&lt;/li>
+                &lt;/ul>&lt;/p>
+                Поменяйте содержимое списка на текс list их порядковый номер в коде.
+            </p>
+            <h2>Заголовок.</h2>
+            <ul>
+                <li>list</li>
+                <li>list</li>
+                <li>list</li>
+                <li>list</li>
+            </ul>
+            <button class="btn btn-primary" onclick="task3()">Изменить</button>
+            <hr>
+            <h5>Задание 3</h5>
+            <p>
+                Создайте калькулятор
+                Есть 2 инпута и знак вопроса между ними дальше равенство и поле результата.
+            </p>
+            <div class="input-group">
+                <input id="userInput1" type="number" class="form-control">&nbsp;&nbsp;?&nbsp;&nbsp;
+                <input id="userInput2" type="number" class="form-control">
+                <div class="input-group-prepend">&nbsp;&nbsp;=&nbsp;&nbsp;
+                    <span id="result" class="input-group-text">Результат</span>
+                </div>
+            </div>
+            <br>
+            <div class="calc">
+                <button onclick="calculate('+')" class="btn btn-primary">&nbsp;&nbsp;+&nbsp;&nbsp;</button>
+                <button onclick="calculate('-')" class="btn btn-primary">&nbsp;&nbsp;-&nbsp;&nbsp;</button>
+                <button onclick="calculate('*')" class="btn btn-primary">&nbsp;&nbsp;*&nbsp;&nbsp;</button>
+                <button onclick="calculate('/')" class="btn btn-primary">&nbsp;&nbsp;/&nbsp;&nbsp;</button>
+            </div>
+            <hr>
+            <h5>Задание 4</h5>
+            <p>
+                Дан элемент ul, а в нем li #list. Вставьте перед элементом #list новую li с текстом 'Первый элемент
+                списка'
+            </p>
+            <h6>Элемент</h6>
+            <ul id="newLi">
+                <li id="before">#list</li>
+            </ul>
+            <br>
+            <button class="btn btn-primary" onclick="li()">Добавить элемент</button>
+            <hr>
+            <h5>Шахматная доска</h5>
+            <br>
+            <div class="chess">
+                <button onclick="chessGo()" class="btn btn-primary">Сгенерировать</button>
+                
+            </div>
+            <br>
+            <div class="chessDesk">
+                <!-- div+.letter*8+(.number{$}+.item*8)*8 -->
+                <!-- div+.letter*8+(.number{$}+(.item+.item.black)*4+.number{$}+(.item.black+.item)*4)*4 -->
+
+            </div>
+            <hr>
+            <script src="script/main.js"></script>
+</body>
+
+</html>
