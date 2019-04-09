@@ -1,54 +1,102 @@
-function checkInput() {
-    var output = document.getElementById('userResult');
-    output.textContent = "";
-    var n = + document.getElementById('userInput').value;
-    if (n < 0 || n > 999) {
-        output.innerHTML = 'ОШИБКА!<br>Введите число в диапазоне от 0 до 999.'
-        setStyle(false)
-        
+function butt() {
+    let tmp = document.getElementById('hello');
+    if (tmp.innerText == 'Привет!')
+        tmp.innerText = "Hello"
+    else
+        tmp.innerText = 'Привет!'
+}
+
+function task2() {
+    let p = document.getElementById('tagHello');
+    if (p.tagName == 'B') {
+        p.outerHTML = '<h3 id="tagHello">' + p.innerText + '&#128526;' + '</h3>';
     } else {
-        console.log(pars(n))
-        
-        output.innerHTML = writeRus(pars(n));
-        setStyle(true)
+        p.outerHTML = '<b id="tagHello">' + p.innerText + '</b>'
     }
-    showHide('resultField');
 }
 
-function pars(params) {
-    let p = {
-        hundred: Math.floor(params / 100),
-        decade: Math.floor(params % 100 / 10),
-        unit: (params % 100 % 10)
+function task3() {
+    let t = document.getElementsByTagName('li');
+    for (let i = 0; i < t.length; i++) {
+        t[i].innerHTML = 'list ' + (i + 1);
     }
-    return p
+}
+
+
+function calculate(sign) {
+    let input1 = + document.getElementById('userInput1').value;
+    let input2 = + document.getElementById('userInput2').value;
+    let result = document.getElementById('result');
+    switch (sign) {
+        case '+':
+            result.innerText = input1 + input2;
+            break;
+        case '-':
+            result.innerText = input1 - input2;
+            break;
+        case '*':
+            result.innerText = input1 * input2;
+            break;
+        case '/':
+            result.innerText = input1 / input2;
+            break;
+    }
 
 }
 
-function writeRus(params) {
-    return "Сотни: " +
-        params.hundred +
-        "<br>Десятки: " +
-        params.decade +
-        "<br>Единицы: " +
-        params.unit 
-}
+function chessGo() {
+    let root = document.getElementsByClassName('chessDesk')[0];
+    //Создание элемента
 
-function showHide(element_id) {
-    if (document.getElementById(element_id)) { 
-        var obj = document.getElementById(element_id); 
-        if (obj.style.display != "block") { 
-            obj.style.display = "block";
+    let empty = document.createElement('div');
+    root.append(empty);
+
+
+    //Первая строка с буквами
+    for (let i = 65; i < 73; i++) {
+        let letter = document.createElement('div');
+        letter.textContent = String.fromCharCode(i);
+        letter.className = 'letter';
+        root.appendChild(letter)
+    }
+
+    //Тело
+    for (let rowNum = 1; rowNum < 9; rowNum++) {
+
+        let number = document.createElement('div');
+        number.textContent = rowNum;
+        number.className = 'number';
+        root.appendChild(number);
+
+        for (let colNum = 1; colNum < 9; colNum++) {
+            var item = document.createElement('div');
+            if (rowNum % 2 == 0) {
+                if (colNum % 2 == 0)
+                    item.className = 'item'
+                else
+                    item.className = 'black'
+            }
+            else {
+                if (colNum % 2 == 0)
+                    item.className = 'black'
+                else
+                    item.className = 'item'
+            }
+            root.appendChild(item);
         }
     }
-}   
 
-function setStyle(params) {
-    let resultField = document.getElementById('resultField');
-    if (params) {
-        resultField.classList.replace("alert-danger", "alert-success");
-    } else {
-        resultField.classList.replace("alert-success", "alert-danger");
-    }
 }
+function li() {
+    let ui = document.getElementById('newLi');
 
+    if (ui.children[0].innerText == 'Первый элемент списка') {
+        alert('Элемент уже существует')
+    } else {
+        let before = document.getElementById('before');
+        let newLi = document.createElement('li');
+        newLi.innerHTML = 'Первый элемент списка';
+        ui.insertBefore(newLi, before)[1];
+    }
+
+}
