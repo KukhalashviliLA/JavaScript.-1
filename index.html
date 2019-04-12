@@ -6,94 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="main/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main/bootstrap-4.3.1-dist/js/bootstrap.min.js">
     <link rel="stylesheet" href="css/style.css">
-    <title>Lesson_5</title>
+    <title>Document</title>
 </head>
 
 <body>
     <div class="container">
-        <h2>Урок 5. Введение в DOM</h3>
-            <h5>Задание 1</h5>
-            <p>
-                Есть кнопка button рядом с ней есть текст (Hello)
-                необходимо при нажатии на кнопку поменять текст кнопки на (Привет)
-            </p>
-            <button id="hello" class="btn btn-primary" onclick="butt()">Hello!</button>
-            <hr>
-            <h5>Задание 2</h5>
-            <p>
-                Есть кнопка button рядом с ней есть тэг &lt;b&gt;&lt;/b&gt; (Hello) необходимо при нажатии на кнопку
-                поменять тэг на &lt;h3&gt;&lt;/h3>
-            </p>
-            <button class="btn btn-primary" onclick="task2()">кнопка</button>
-            <b id="tagHello" class="task_2">Hello!</b>
-            <hr>
-            <h5>Задание 3</h5>
-            <p>Дан код
-                &lt;h2>Заголовок.&lt;/h2>
-                &lt;ul>
-                &lt;li>list&lt;/li>
-                &lt;li>list&lt;/li>
-                &lt;li>list&lt;/li>
-                &lt;li>list&lt;/li>
-                &lt;/ul>&lt;/p>
-                Поменяйте содержимое списка на текс list их порядковый номер в коде.
-            </p>
-            <h2>Заголовок.</h2>
-            <ul>
-                <li>list</li>
-                <li>list</li>
-                <li>list</li>
-                <li>list</li>
-            </ul>
-            <button class="btn btn-primary" onclick="task3()">Изменить</button>
-            <hr>
-            <h5>Задание 3</h5>
-            <p>
-                Создайте калькулятор
-                Есть 2 инпута и знак вопроса между ними дальше равенство и поле результата.
-            </p>
-            <div class="input-group">
-                <input id="userInput1" type="number" class="form-control">&nbsp;&nbsp;?&nbsp;&nbsp;
-                <input id="userInput2" type="number" class="form-control">
-                <div class="input-group-prepend">&nbsp;&nbsp;=&nbsp;&nbsp;
-                    <span id="result" class="input-group-text">Результат</span>
+        <h1>Урок 6. Обработка событий в JavaScript</h1>
+
+
+        <div class="content">
+            <div class="card" style="width: 30rem;">
+                <img src="img/1492616994-11-photo-google-gallery-image-picture-data-suit-services_83393.svg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Галерея</h5>
+                    <p class="card-text">
+                        <a href="gallery.html" target="_blank" rel="noopener noreferrer">1. Доработать функцию замены
+                            картинки в галерее таким образом, чтобы она проверяла
+                            наличие картинки по указанному в src адресу. <br>
+                            2. Добавить в галерею функцию перехода к следующему изображению. По сторонам от большой
+                            картинки
+                            должны быть стрелки «вперед» и «назад», по нажатию на которые происходит замена изображения
+                            на
+                            следующее или предыдущее.</a>
+                    </p>
                 </div>
             </div>
-            <br>
-            <div class="calc">
-                <button onclick="calculate('+')" class="btn btn-primary">&nbsp;&nbsp;+&nbsp;&nbsp;</button>
-                <button onclick="calculate('-')" class="btn btn-primary">&nbsp;&nbsp;-&nbsp;&nbsp;</button>
-                <button onclick="calculate('*')" class="btn btn-primary">&nbsp;&nbsp;*&nbsp;&nbsp;</button>
-                <button onclick="calculate('/')" class="btn btn-primary">&nbsp;&nbsp;/&nbsp;&nbsp;</button>
-            </div>
-            <hr>
-            <h5>Задание 4</h5>
-            <p>
-                Дан элемент ul, а в нем li #list. Вставьте перед элементом #list новую li с текстом 'Первый элемент
-                списка'
-            </p>
-            <h6>Элемент</h6>
-            <ul id="newLi">
-                <li id="before">#list</li>
-            </ul>
-            <br>
-            <button class="btn btn-primary" onclick="li()">Добавить элемент</button>
-            <hr>
-            <h5>Шахматная доска</h5>
-            <br>
-            <div class="chess">
-                <button onclick="chessGo()" class="btn btn-primary">Сгенерировать</button>
-                
-            </div>
-            <br>
-            <div class="chessDesk">
-                <!-- div+.letter*8+(.number{$}+.item*8)*8 -->
-                <!-- div+.letter*8+(.number{$}+(.item+.item.black)*4+.number{$}+(.item.black+.item)*4)*4 -->
 
+            <div class="card" style="width: 30rem;">
+                <img src="img/shoppingcart_77968.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Корзина</h5>
+                    <p class="card-text">
+                        <a href="recycle.html">Реализовать модуль корзины. Создать блок товаров и блок корзины. У
+                            каждого
+                            товара есть кнопка «Купить», при нажатии на которую происходит добавление имени и цены
+                            товара в
+                            блок корзины. Корзина должна уметь считать общую сумму заказа.</a>
+                    </p>
+                    </p>
+                </div>
             </div>
-            <hr>
-            <script src="script/main.js"></script>
+        </div>
+
+    </div>
+
 </body>
 
 </html>
