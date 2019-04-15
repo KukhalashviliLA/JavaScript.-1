@@ -1,58 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="main/bootstrap-4.3.1-dist/js/bootstrap.min.js">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="main/bootstrap-4.3.1-dist/css/bootstrap.min.css"
+    />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/css/bootstrap-select.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Lesson_7_Canvas</title>
+  </head>
+  <body>
     <div class="container">
-        <h1>Урок 6. Обработка событий в JavaScript</h1>
-
-
-        <div class="content">
-            <div class="card" style="width: 30rem;">
-                <img src="img/1492616994-11-photo-google-gallery-image-picture-data-suit-services_83393.svg"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Галерея</h5>
-                    <p class="card-text">
-                        <a href="gallery.html" target="_blank" rel="noopener noreferrer">1. Доработать функцию замены
-                            картинки в галерее таким образом, чтобы она проверяла
-                            наличие картинки по указанному в src адресу. <br>
-                            2. Добавить в галерею функцию перехода к следующему изображению. По сторонам от большой
-                            картинки
-                            должны быть стрелки «вперед» и «назад», по нажатию на которые происходит замена изображения
-                            на
-                            следующее или предыдущее.</a>
-                    </p>
-                </div>
-            </div>
-
-            <div class="card" style="width: 30rem;">
-                <img src="img/shoppingcart_77968.svg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Корзина</h5>
-                    <p class="card-text">
-                        <a href="recycle.html">Реализовать модуль корзины. Создать блок товаров и блок корзины. У
-                            каждого
-                            товара есть кнопка «Купить», при нажатии на которую происходит добавление имени и цены
-                            товара в
-                            блок корзины. Корзина должна уметь считать общую сумму заказа.</a>
-                    </p>
-                    </p>
-                </div>
-            </div>
+      <h2>Урок 7. Урок-практикум</h2>
+      <h4>Canvas</h4>
+      <div class="section">
+        <div class="tools">
+          <div class="time">
+            <span id="current_time"></span>
+            <br />
+          </div>
+          <div class="coordinates">
+            <span id="x" class="coor coor1"
+              ><b>x: </b> <span id="xCoord"></span
+            ></span>
+            <span id="y" class="coor coor2"
+              ><b>y: </b> <span id="yCoord"></span
+            ></span>
+            <br />
+            <button class="toolButton btn btn btn-secondary" id="brush">
+              Рисовать
+            </button>
+            <br />
+            <button class="toolButton btn btn btn-secondary" id="notbrush">
+              Стереть
+            </button>
+            <br />
+            <button class="toolButton btn btn btn-secondary" id="notbrush2">
+              Очистить
+            </button>
+            <br />
+            <select class="selectpicker" id="sizeSelect">
+              <option>5</option>
+              <option>10</option>
+              <option>15</option>
+              <option>20</option>
+            </select>
+            <input type="color" id="color" />
+          </div>
         </div>
-
+        <div class="canv">
+          <canvas id="canv" width="1000" height="800"></canvas>
+        </div>
+      </div>
     </div>
 
-</body>
-
+    <script src="script.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+  </body>
 </html>
